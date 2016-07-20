@@ -17,7 +17,7 @@ end
 100.times do
 	Question.create(
 		author_id:User.all.shuffle[0].id,
-		title: Faker::Hipster.sentence.chop,
+		title: Faker::Hipster.sentence.chop + "?",
 		body: Faker::Lorem.paragraph
 		)
 end

@@ -2,6 +2,7 @@
   margin: 20px auto;
   padding: 0px 20px 20px 20px;
   border: 2px dotted purple;
+  min-width: 800px;
   width: 75%;
 }
 
@@ -41,17 +42,28 @@ nav ul li {
   text-decoration: none;
 }
 
-.votes, .answers, .views, .title{
+.votes, .answers, .views{
   display:inline-block;
   text-align: center;
   padding:5px;
 }
 
 .votes, .answers, .views{
-
   color: gray;
 }
 
 .question-summary{
     border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.question-status{
+  float:right;
+}
+
+.title{
+  width: 75%;
+  text-align: left;
+  display:inline-block;
+  padding-left: 1.5em;
 }
