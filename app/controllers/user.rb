@@ -8,9 +8,9 @@ get "/users/new" do
 end
 
 post "/users" do
-  user = User.create(params[:user])
-  if user.errors.any?
-    @errors = user.errors.full_messages
+  @user = User.create(params[:user])
+  if @user.errors.any?
+    @errors = @user.errors.full_messages
     erb :'/users/new'
   else
     session[:user_id] = @user.id
