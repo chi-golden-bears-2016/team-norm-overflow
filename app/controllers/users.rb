@@ -1,16 +1,19 @@
+before do
+  @errors = []
+end
+
 get "/users/index" do
   erb :"users/index"
 end
 
 get "/users/new" do
-  @errors = false
   erb :'/users/new'
 end
 
 post "/users" do
   @user = User.create(params[:user])
   if @user.errors.any?
-    @errors = @user.errors.full_messages
+    @errors << @user.errors.full_messages
     erb :'/users/new'
   else
     session[:user_id] = @user.id
@@ -18,9 +21,12 @@ post "/users" do
   end
 end
 
+get "/users/not_authorized" do
+  erb :"/users/not_authorized"
+end
+
 get "/users/:id" do
   @user = User.find(params[:id])
-  redirect "users/not_authorized" if current_user != @user
   erb :"users/show"
 end
 
@@ -43,4 +49,3 @@ delete "/users/:id" do
   @user.destroy
   redirect "/logout"
 end
-
