@@ -1,0 +1,9 @@
+<h1><%= current_user.first_name %></h1>
+<h2><%= current_user.last_name %></h2>
+<p><%= current_user.email %></p>
+
+<p><a href="/users/edit/<%= current_user.id %>">Edit user info</a></p>
+<form method="post" action="/users/<%= current_user.id %>">
+  <input type="hidden", name="_method" value="delete">
+  <input class="delete" type="submit" value="Delete user">
+</form>
