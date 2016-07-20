@@ -1,5 +1,9 @@
+before do
+  @errors = []
+end
+
 get "/sessions/new" do
-  erb :"session/new"
+  erb :"sessions/new"
 end
 
 post "/sessions" do
@@ -10,8 +14,8 @@ post "/sessions" do
     session[:user_id] = user.id
     redirect "/"
   else
-    @errors = ["Please check you log in credentials"]
-    redirect "/sessions/new"
+    @errors = ["Please check your log in credentials"]
+    erb :"sessions/new"
   end
 end
 

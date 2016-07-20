@@ -1,7 +1,8 @@
 <h1 class="section-title">Login to your Scotch Overflow account</h1>
 
-<!-- partial here -->
-
+<%if @errors %>
+    <%= erb :"_errors_helper", locals:{errors: @errors} %>
+<% end %>
 <form action="/sessions" method="post">
   Email/Username:<br>
   <input type="text" name="user[email_or_username]" placeholder="email/username"><br>

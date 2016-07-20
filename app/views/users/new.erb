@@ -1,9 +1,9 @@
 <h1 class = "section-title">Register for your Scotch Overflow account today!</h1>
-<% if @errors %>
-  <% @errors.each do |error| %>
-    <h3 class="error"><%= error %></h3>
-  <% end %>
+
+<%if @errors %>
+    <%= erb :"_errors_helper", locals:{errors: @errors} %>
 <% end %>
+
 <form action="/users" method="post">
   Username:<br>
   <input type="text" name="user[username]"><br>
