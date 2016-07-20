@@ -1,0 +1,9 @@
+<h1>All Questions</h1>
+
+<% if @questions %>
+  <ul id="question-list">
+  <% @questions.each do |question| %>
+     <li class="question-list-item"><%= erb :"questions/_summary",locals:{ question:question }, layout:false %></li>
+  <% end %>
+  </ul>
+<% end %>

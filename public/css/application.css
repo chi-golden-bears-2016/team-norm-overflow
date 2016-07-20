@@ -1,8 +1,9 @@
 .container {
   margin: 20px auto;
-  width: 600px;
   padding: 0px 20px 20px 20px;
   border: 2px dotted purple;
+  min-width: 800px;
+  width: 75%;
 }
 
 nav {
@@ -30,4 +31,39 @@ nav ul li {
 
 .inline {
   display: inline;
+}
+
+#question-list{
+  list-style-type:none;
+  display:block;
+}
+
+.title-text a{
+  text-decoration: none;
+}
+
+.votes, .answers, .views{
+  display:inline-block;
+  text-align: center;
+  padding:5px;
+}
+
+.votes, .answers, .views{
+  color: gray;
+}
+
+.question-summary{
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.question-status{
+  float:right;
+}
+
+.title{
+  width: 75%;
+  text-align: left;
+  display:inline-block;
+  padding-left: 1.5em;
 }
