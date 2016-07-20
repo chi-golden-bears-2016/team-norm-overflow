@@ -1,3 +1,4 @@
 get '/' do
-  erb :index
+  @questions = Question.all
+  redirect "/questions"
 end
