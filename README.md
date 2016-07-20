@@ -33,3 +33,5 @@ The user will be able to log in with email OR username (field will take either).
 
 **Story**: User can vote on a question, answer, or comment.
 
+### Schema
+![Schema](/schema.png "Scotch Overflow schema")
