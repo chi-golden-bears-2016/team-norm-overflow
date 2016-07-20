@@ -34,7 +34,7 @@ end
 	Comment.create(
 		author_id: User.take.id,
 		body: Faker::Company.catch_phrase,
-		commentable_type: "question",
+		commentable_type: "Question",
 		commentable_id:Question.take.id
 		)
 end
@@ -43,7 +43,7 @@ end
 	Comment.create(
 		author_id: User.take.id,
 		body: Faker::StarWars.quote,
-		commentable_type: "answer",
+		commentable_type: "Answer",
 		commentable_id:Answer.take.id
 		)
 end
@@ -51,8 +51,7 @@ end
 200.times do
 	Vote.create(
 		voter_id: User.take.id,
-		body: Faker::Company.catch_phrase,
-		voteable_type: "question",
+		voteable_type: "Question",
 		voteable_id:Question.take.id,
 		value: rand(-1..1)
 		)
@@ -61,8 +60,7 @@ end
 200.times do
 	Vote.create(
 		voter_id: User.take.id,
-		body: Faker::StarWars.quote,
-		voteable_type: "answer",
+		voteable_type: "Answer",
 		voteable_id:Answer.take.id,
 		value: rand(-1..1)
 		)
@@ -71,8 +69,7 @@ end
 200.times do
 	Vote.create(
 		voter_id: User.take.id,
-		body: Faker::Commerce.product_name, #=> "Practical Granite Shirt",
-		voteable_type: "comment",
+		voteable_type: "Comment",
 		voteable_id:Comment.take.id,
 		value: rand(-1..1)
 		)
