@@ -2,6 +2,22 @@ get "/users/index" do
   erb :"users/index"
 end
 
+get "/users/new" do
+  @errors = false
+  erb :'/users/new'
+end
+
+post "/users" do
+  user = User.create(params[:user])
+  if user.errors.any?
+    @errors = user.errors.full_messages
+    erb :'/users/new'
+  else
+    session[:user_id] = @user.id
+    redirect "/"
+  end
+end
+
 get "/users/:id" do
   @user = User.find(params[:id])
   redirect "users/not_authorized" if current_user != @user
@@ -27,3 +43,4 @@ delete "/users/:id" do
   @user.destroy
   redirect "/logout"
 end
+
