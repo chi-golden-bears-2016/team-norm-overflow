@@ -88,7 +88,7 @@ input {
   display:block;
 }
 
-.title-text a{
+a{
   text-decoration: none;
 }
 
@@ -100,6 +100,14 @@ input {
 
 .votes, .answers, .views{
   color: gray;
+}
+
+.votes:hover, .answers:hover, .views:hover{
+  background-color: lightgray;
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 .question-summary{
