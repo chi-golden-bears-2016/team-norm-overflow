@@ -15,21 +15,25 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Scotch Overflow</title>
 </head>
 <body>
-  <nav>
+  <header>
+    <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <% if logged_in? %>
-          <li><a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a></li>
+          <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
           <li><a href="/logout">Logout</a></li>
         <% else %>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/login">Login</a></li>
+          <li><a href="/users/new">Register</a></li>
+          <li><a href="/sessions/new">Login</a></li>
       </ul>
     <% end %>
-  </nav>
+    </nav>
+    <h1>Scotch Overflow</h1>
+  </header>
+
   <div class="container">
     <%= yield %>
   </div>

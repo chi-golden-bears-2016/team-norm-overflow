@@ -6,18 +6,68 @@
   width: 75%;
 }
 
-nav {
-  background-color: skyblue;
-}
-
-nav ul {
-  margin: 0px;
-}
-
 nav ul li {
   list-style: none;
   display: inline-block;
   padding: 15px;
+  padding-left: 0px;
+  text-align: center;
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 6px;
+  opacity: 1;
+}
+
+header {
+  background-image: url('/images/scotch.gif');
+  opacity: 0.6;
+  min-height: 150px;
+  height: 100%;
+}
+.image-container{
+  width: 100%;
+}
+
+nav ul {
+  margin: 0px;
+  float: right;
+  text-align: center;
+}
+
+input[type=text], input[type=password], textarea {
+  color: #05724f;
+}
+
+button {
+  width: 100%;
+  background-color: lightgreen;
+  border: none;
+  color: black;
+  padding: 8px 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #e8e8e8;
+  font-size: 1.5em;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  font-size: 24px;
 }
 
 .delete {
