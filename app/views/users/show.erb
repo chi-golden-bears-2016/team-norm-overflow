@@ -1,9 +1,13 @@
 <h1><%= @user.username %></h1>
 <p><%= @user.email %></p>
+  @user.avatar.current_path
 <% if @user == current_user %>
-<p><a href="/users/edit/<%= @user.id %>">Edit user info</a></p>
-<form method="post" action="/users/<%= @user.id %>">
-  <input type="hidden", name="_method" value="delete">
-  <input class="delete" type="submit" value="Delete user">
-</form>
+
 <% end %>
+<div class = "user-questions-data">
+  <%= erb :'/users/_user_tables', locals: {column1: "Questions", user_data: @user.questions} %>
+</div>
+
+<div class = "user-answers-data">
+  <%= erb :'/users/_user_tables', locals: {column1: "Submitted Answers to:", user_data: @user.answers} %>
+</div>
