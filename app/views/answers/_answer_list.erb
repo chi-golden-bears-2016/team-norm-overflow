@@ -6,7 +6,7 @@
 </ul>
 <% if logged_in? %>
   <h2> Compose an answer </h2>
-  <form action="/questions/<%=question.id %>/answers" method="post">
+  <form id="new-answer" action="/questions/<%=question.id %>/answers" method="post">
     <textarea name="answer-body"> </textarea>
     <script>
       CKEDITOR.replace( 'answer-body' );
