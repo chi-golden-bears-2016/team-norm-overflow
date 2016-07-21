@@ -1,19 +1,14 @@
 
 <table class="data-table">
-  <tr>
-    <th><%= column1 %></th>
-    <th>Date</th>
-    <th>Votes</th>
-  </tr>
   <% user_data.each do |data| %>
   <tr>
+    <td><%= data.votes.sum("value")%> pts</td>
     <% if data.class.to_s == "Question" %>
       <td><a href="/questions/<%=data.id%>"><%= data.title %></a></td>
       <% else %>
     <td><a href="/questions/<%=data.question.id%>#<%=data.id%>"><%= data.question.title %></a></td>
     <% end %>
-    <td><%= data.created_at().strftime("%m/%d/%Y at %T") %></td>
-    <td><%= data.votes.sum("value") %></td>
+    <td><%= data.created_at().strftime("%m/%d/%Y") %></td>
   </tr>
   <% end %>
 </table>

@@ -7,13 +7,14 @@
 
 }
 
+
 #main-title{
     background-image: url('/images/neat_scotch.png');
     /*background-color: skyblue;*/
     opacity: .85;
 }
 
-#main-title h1 {
+#main-title h1 a {
   display: inline-block;
   margin-top: 0px;
   min-height: 50px;
@@ -25,6 +26,7 @@
   color: #FF0080;
 /*  box-shadow: 10px 10px 30px;*/
   z-index: 2;
+  text-decoration: none;
 }
 
 #main-title span {
