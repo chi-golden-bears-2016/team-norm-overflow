@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   require 'bcrypt'
-
-  mount_uploader :avatar, AvatarUploader
+  require 'carrierwave/orm/activerecord'
+  mount_uploader :avatar, AvatarUploader  
   validates :username, uniqueness: true
   validates :username, presence: true
   validates :email, uniqueness: true
