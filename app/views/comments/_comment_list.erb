@@ -1,6 +1,6 @@
 <ul class="comments list">
   <% comments.each do |comment| %>
-    <%= erb :"comments/show", locals: {comment: comment} %>
+    <%= erb :"comments/show", locals: {comment: comment, logged_in: @logged_in} %>
   <% end %>
   <form action ="/<%=commentable.class.name.downcase%>s/<%=commentable.id%>/comments/new" method = "post">
     <input type="text" name="body"></input>

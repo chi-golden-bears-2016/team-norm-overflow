@@ -5,8 +5,8 @@ class Question < ActiveRecord::Base
   has_many :answers
   belongs_to :author, class_name: :User
 
-  def vote_count
-    self.votes.length
+  def points
+    self.votes.sum("value")
   end
 
   def answer_count

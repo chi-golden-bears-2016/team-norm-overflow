@@ -1,0 +1,8 @@
+<% if @logged_in %>
+  <div class="vote-buttons">
+    <form method="post" action="/votes/<%=voteable_type%>/<%=voteable_id%>/votes">
+      <button type="submit" name="vote" class="votebuttons" value="1">toast</button>
+      <button type="submit" name="vote" class="votebuttons" value="-1">spill</button>
+    </form>
+  </div>
+<% end %>
