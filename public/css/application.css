@@ -208,8 +208,6 @@ a:hover{
 
 .status {
   color: gray;
-  float:right;
-
 }
 
 .statistics {
@@ -223,17 +221,12 @@ a:hover{
   width: 200;
   border: gray 1px dotted;
   padding: 8px;
-
 }
 
-.author>div.mini {
-  float: right;
-}
-
-.author{
+/*.author{
   margin:2em;
   width: 75%;
-}
+}*/
 
 article{
   width: 75%;
