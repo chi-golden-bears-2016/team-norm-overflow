@@ -29,4 +29,17 @@ $(document).ready(function() {
       var a = $("#" + id + " ul").append(commentPartial);
     })
   })
+
+  $(".best-answer-form").on("submit", function(event){
+    event.preventDefault();
+    var url =$(this).attr("action");
+    var commentBody = $(this).serialize();
+    var method = $(this).attr("method");
+    $.ajax({
+      url: url,
+      method: method
+    }).done(function(response){
+      $(this).hide();
+    })
+  })
 });
