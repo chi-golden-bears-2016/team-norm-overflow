@@ -1,3 +1,12 @@
-<li id = "<%=answer.id %>" class="answer"><%= answer.body %> - <%= erb :"/users/_mini", locals: {user: answer.author, commentable: answer} %><%= erb :"comments/_comment_list", locals: {comments: answer.comments, commentable:answer} %></li>
+<li id = "<%=answer.id %>" class="answer">
+  <% if is_best_answer?(answer) %>
+    <img class="best-answer" src="/images/best_answer.png" alt ="best answer!">
+  <% elsif is_my_question?(answer) && !answer.question.has_best_answer?%>
+    <form class="best-answer-form" method="POST" action="/questions/<%=answer.question.id %>/best_answers/<%=answer.id%>"><input type="submit" value="make best answer"></form>
+  <% end %>
+  <%= answer.body %> -
+  <%= erb :"/users/_mini", locals: {user: answer.author, commentable: answer} %>
+  <%= erb :"comments/_comment_list", locals: {comments: answer.comments, commentable:answer} %>
+</li>
 
 

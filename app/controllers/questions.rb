@@ -56,4 +56,12 @@ post '/questions/:id/comments/new' do
   end
 end
 
+post '/questions/:q_id/best_answers/:a_id' do
+  @question = Question.find(params[:q_id])
+  @question.best_answer_id = params[:a_id]
+  @question.save!
+  status 200
+  redirect "/questions/#{params[:q_id]}"
+end
+
 
