@@ -1,4 +1,4 @@
-<div class = "question">
+<div id="<%=@question.id%>" class = "question">
   <h1><%= @question.title %></h1>
   <article><%= @question.body %>  <div class= "author"><%= erb :"users/_mini", locals: {user: @question.author, commentable: @question} %></div></article>
 
