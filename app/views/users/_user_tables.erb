@@ -2,7 +2,7 @@
 <table class="data-table">
   <% user_data.each do |data| %>
   <tr>
-    <td><%= data.votes.sum("value")%> pts</td>
+    <td><%= data.points%> pts</td>
     <% if data.class.to_s == "Question" %>
       <td><a href="/questions/<%=data.id%>"><%= data.title %></a></td>
       <% else %>

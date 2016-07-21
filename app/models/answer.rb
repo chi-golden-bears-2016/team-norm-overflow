@@ -6,4 +6,9 @@ class Answer < ActiveRecord::Base
   def minutes_ago
     ((Time.now-self.created_at) / 60).floor
   end
+
+
+  def points
+    self.votes.sum("value")
+  end
 end

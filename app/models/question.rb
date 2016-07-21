@@ -4,8 +4,8 @@ class Question < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :answers
 
-  def vote_count
-    self.votes.length
+  def points
+    self.votes.sum("value")
   end
 
   def answer_count
