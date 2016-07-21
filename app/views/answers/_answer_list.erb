@@ -1,0 +1,6 @@
+<h2><%= answers.length %> Answers</h2>
+<ul class = "answer list">
+  <% answers.each do |answer| %>
+  <%= erb :"answers/show", locals: {answer: answer} %>
+  <% end %>
+</ul>

@@ -1,0 +1,9 @@
+<div class="mini">
+  <p class="status">answered <%= commentable.minutes_ago %> minutes ago</p>
+  <a href="/users/<%= user.id %>"><%= user.username %></a>
+  <span class="statistics">
+    q <%= user.question_count %>
+    a <%= user.answer_count %>
+    v <%= user.vote_count %>
+  </span>
+</div>
