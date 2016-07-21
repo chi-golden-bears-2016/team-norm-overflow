@@ -1,0 +1,18 @@
+<h2><%= answers.length %> Answers</h2>
+<ul class = "answer list">
+  <% answers.each do |answer| %>
+  <%= erb :"answers/show", locals: {answer: answer} %>
+  <% end %>
+</ul>
+<% if logged_in? %>
+  <h2> Compose an answer </h2>
+  <form action="/questions/<%=question.id %>/answers" method="post">
+    <textarea name="answer-body"> </textarea>
+    <script>
+      CKEDITOR.replace( 'answer-body' );
+    </script>
+    <input type="submit" value="Answer!">
+  </form>
+<% else %>
+  <a href="/sessions/new?returnURL=/questions/<%= question.id %>">Login to answer this question</a>
+<% end %>

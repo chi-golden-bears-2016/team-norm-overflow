@@ -1,4 +1,4 @@
-<div class="question-summary" id="<%= question.id %>" >
+<div class="questions summary" id="<%= question.id %>" >
 
   <div class="votes">
     <div class="mini-counts"><span title="votes"><%= question.vote_count %></span></div>
@@ -14,7 +14,7 @@
   </div>
   <div class="title">
     <h2 class="title-text"><a href="questions/<%= question.id %>"><%= question.title %></a></h2>
-      <div class ="question-status"><p>asked <%= question.minutes_ago %> minutes ago by <a href="/users/<%= question.author.id %>"><%= question.author.username %></a></p>
+      <div class ="question status"><p>asked <%= question.minutes_ago %> minutes ago by <a href="/users/<%= question.author.id %>"><%= question.author.username %></a></p>
   </div>
 
 </div>

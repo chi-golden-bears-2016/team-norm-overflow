@@ -33,6 +33,9 @@
   display: inline-block;
   float: right;
 }
+h1{
+  text-align:center;
+}
 
 nav ul li {
   list-style: none;
@@ -126,12 +129,13 @@ input, textarea {
   display: inline;
 }
 
-#question-list{
+.list {
   list-style-type:none;
   display:block;
+  margin: 1em;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -143,6 +147,7 @@ a{
 
 .votes, .answers, .views{
   color: gray;
+  vertical-align: middle;
 }
 
 .votes:hover, .answers:hover, .views:hover{
@@ -153,13 +158,9 @@ a:hover{
   text-decoration: underline;
 }
 
-.question-summary{
+.summary{
     border-bottom: 1px solid black;
     width: 100%;
-}
-
-.question-status{
-  float:right;
 }
 
 .title{
@@ -168,3 +169,48 @@ a:hover{
   display:inline-block;
   padding-left: 1.5em;
 }
+
+.comment {
+  border-bottom: 1px solid gray;
+  padding: 5px;
+}
+
+.status {
+  color: gray;
+  float:right;
+
+}
+
+.statistics {
+  color: gray;
+  font-size: .5em;
+}
+
+.mini {
+  display: inline-block;
+  width: 200;
+  background-color: gold;
+}
+
+.author>div.mini {
+  float: right;
+}
+
+.author{
+  margin:2em;
+  width: 75%;
+}
+
+article{
+  width: 75%;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: Georgia serif;
+  margin-bottom: 4em;
+}
+
+.answer{
+  background-color: rgba(50,50,50,.1);
+}
+

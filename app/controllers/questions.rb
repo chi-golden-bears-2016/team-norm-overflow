@@ -4,14 +4,31 @@ get "/questions"  do
 end
 
 get "/questions/new" do
-  unless logged_in?
+  if !logged_in?
     redirect "/sessions/new"
-  end
+  else
     erb :"questions/new"
+  end
+end
+
+get "/questions/:id" do
+  @question = Question.find(params[:id])
+  erb :"questions/show"
 end
 
 post "/questions" do
-  params[:question][:author_id] = session[:user_id]
-  @question = Question.create(params[:question])
+  @question = Question.create(
+    title: params[:title],
+    body: params[:body],
+    author_id: session[:user_id]
+    )
   redirect "/questions/#{@question.id}"
+end
+
+post "/questions/:id/answers" do
+  @answer= Answer.create(
+    body: params[:body],
+    author_id: session[:user_id],
+    question_id: params[:id])
+  redirect "/questions/#{params[:id]}"
 end
