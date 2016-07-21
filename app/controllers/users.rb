@@ -12,12 +12,6 @@ end
 
 post "/users" do
   @user = User.create(params[:user])
-
-
-  puts "\n\n\n\n\n\n\n\n\n\n\n\n\n"
-  puts params[:thumb].class
-
-
   @user.avatar = params[:thumb]
   @user.save!
   if @user.errors.any?
@@ -25,7 +19,7 @@ post "/users" do
     erb :'/users/new'
   else
     session[:user_id] = @user.id
-    # redirect "/"
+    redirect "/"
   end
 end
 

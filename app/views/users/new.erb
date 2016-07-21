@@ -5,7 +5,7 @@
       <%= erb :"_errors_helper", locals:{errors: @errors} %>
   <% end %>
 
-  <form action="/users" method="post">
+  <form action="/users" method="post" enctype="multipart/form-data">
     Username:<br>
     <input type="text" name="user[username]"><br>
     Email:<br>

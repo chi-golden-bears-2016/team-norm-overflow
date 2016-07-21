@@ -1,5 +1,7 @@
+<img src="../favicon.ico" >
 <h1><%= @user.username %></h1>
 <p><%= @user.email %></p>
+
 <% if @user == current_user %>
 <p><a href="/users/edit/<%= @user.id %>">Edit user info</a></p>
 <form method="post" action="/users/<%= @user.id %>">
