@@ -3,10 +3,7 @@
     <%= erb :"comments/show", locals: {comment: comment} %>
   <% end %>
   <form action ="/<%=commentable.class.name.downcase%>s/<%=commentable.id%>/comments/new" method = "post">
-    <textarea name="body"></textarea>
-    <script>
-    CKEDITOR.replace( 'body' );
-    </script>
+    <input type="text" name="body"></input>
     <input type="submit" value="Add Comment">
   </form>
 </ul>
