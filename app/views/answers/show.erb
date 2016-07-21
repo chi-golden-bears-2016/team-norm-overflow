@@ -1,0 +1,3 @@
+<li class="answer"><%= answer.body %> - <%= erb :"/users/_mini", locals: {user: answer.author, commentable: answer} %><%= erb :"comments/_comment_list", locals: {comments: answer.comments} %></li>
+
+
