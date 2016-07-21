@@ -3,10 +3,9 @@ class Question < ActiveRecord::Base
   has_many :votes, as: :voteable
   has_many :comments, as: :commentable
   has_many :answers
-  belongs_to :author, class_name: :User
 
-  def vote_count
-    self.votes.length
+  def points
+    self.votes.sum("value")
   end
 
   def answer_count
@@ -19,6 +18,10 @@ class Question < ActiveRecord::Base
 
   def minutes_ago
     ((Time.now-self.created_at) / 60).floor
+  end
+
+  def has_best_answer?
+    !(best_answer_id == nil)
   end
 
 end

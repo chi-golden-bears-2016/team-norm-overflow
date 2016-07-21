@@ -11,6 +11,7 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet" type="text/css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -36,8 +37,9 @@
   </header>
 
   <div id="main-title">
-    <h1>Scotch Overflow</h1>
-    <span><a href="/questions/new">ask a question</a></span>
+    <img class="logo" src="/images/scotch_dark_background.jpeg">
+    <h1 id="main-header"><a href="/">Scotch Overflow</a></h1>
+    <span><a id="ask-a-question" href="/questions/new">ask a question</a></span>
   </div>
   <div class="container">
     <%= yield %>

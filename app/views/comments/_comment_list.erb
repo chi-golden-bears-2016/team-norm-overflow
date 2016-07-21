@@ -1,7 +1,10 @@
-<% if comments %>
-<ul class="comments list">
+<ul id="<%=commentable.id %>" class="comments list">
   <% comments.each do |comment| %>
-    <%= erb :"comments/show", locals: {comment: comment} %>
+    <%= erb :"comments/show", locals: {comment: comment, logged_in: @logged_in} %>
   <% end %>
 </ul>
-<% end %>
+<form class =
+  "new-comment" action ="/<%=commentable.class.name.downcase%>s/<%=commentable.id%>/comments/new" method = "post">
+  <input type="text" name="body"></input>
+  <input type="submit" value="Add Comment">
+</form>
