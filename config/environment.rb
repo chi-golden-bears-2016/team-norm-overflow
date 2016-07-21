@@ -16,7 +16,7 @@ require 'active_record'
 require 'logger'
 require 'bcrypt'
 require 'faker'
-
+require 'carrierwave'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
