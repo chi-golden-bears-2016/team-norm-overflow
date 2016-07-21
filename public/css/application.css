@@ -4,6 +4,26 @@
   border: 2px dotted purple;
   min-width: 800px;
   width: 75%;
+
+}
+
+#main-title{
+    /*background-image: url('/images/neat_scotch.png');*/
+    background-color: skyblue;
+}
+
+#main-title h1 {
+  display: inline-block;
+  margin-top: 0px;
+  min-height: 50px;
+  padding-left: 100px;
+  color: #C19421;
+/*  box-shadow: 10px 10px 30px;*/
+}
+
+#main-title span {
+  display: inline-block;
+  float: right;
 }
 h1{
   text-align:center;
@@ -12,23 +32,28 @@ h1{
 nav ul li {
   list-style: none;
   display: inline-block;
-  padding: 15px;
-  padding-left: 0px;
+  padding: 3px;
   text-align: center;
   border: 1px solid red;
   background-color: red;
   border-radius: 6px;
-  opacity: 1;
 }
 
-header {
-  background-image: url('/images/scotch.gif');
-  opacity: 0.6;
-  min-height: 150px;
-  height: 100%;
+.div-header {
+  background-color: black;
+  /*opacity: 0.6;*/
+  min-height: 5%;
+  height: 30px;
 }
+
 .image-container{
   width: 100%;
+}
+
+.new-form{
+  width: 750px;
+  /*float:left;*/
+  display: inline-block;
 }
 
 nav ul {
@@ -52,7 +77,7 @@ button {
   border-radius: 5px;
 }
 
-input {
+input, textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -62,6 +87,7 @@ input {
   background-color: #e8e8e8;
   font-size: 1.5em;
 }
+
 
 .section-title {
   text-align: center;
