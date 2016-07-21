@@ -3,7 +3,6 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :votes, as: :voteable
   has_many :comments, as: :commentable
-
   def minutes_ago
     ((Time.now-self.created_at) / 60).floor
   end
