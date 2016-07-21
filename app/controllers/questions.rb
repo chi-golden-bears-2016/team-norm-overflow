@@ -13,6 +13,7 @@ get "/questions/new" do
 end
 
 get "/questions/:id" do
+  @logged_in = logged_in?
   @question = Question.find(params[:id])
   erb :"questions/show"
 end

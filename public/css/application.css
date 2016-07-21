@@ -66,7 +66,9 @@ nav ul li a:hover {
 .image-container{
   width: 100%;
 }
-
+h2 {
+  text-align: center;
+}
 .new-form{
   width: 750px;
   /*float:left;*/
@@ -84,7 +86,7 @@ input[type=text], input[type=password], textarea {
 }
 
 button {
-  width: 100%;
+  /*width: 100%;*/
   background-color: lightgreen;
   border: none;
   color: black;
@@ -92,6 +94,12 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.votebuttons {
+  background: orange;
+  float: left;
+  padding: 2px;
 }
 
 input, textarea {
