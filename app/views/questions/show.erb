@@ -2,6 +2,6 @@
   <h1><%= @question.title %></h1>
   <article><%= @question.body %>  <div class= "author"><%= erb :"users/_mini", locals: {user: @question.author, commentable: @question} %></div></article>
 
-  <%= erb :"comments/_comment_list", locals: {comments: @question.comments} %>
+  <%= erb :"comments/_comment_list", locals: {comments: @question.comments, commentable:@question} %>
   <%= erb :"answers/_answer_list", locals: {answers: @question.answers, question:@question} %>
 </div>
