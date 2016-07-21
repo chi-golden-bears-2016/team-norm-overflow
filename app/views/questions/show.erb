@@ -3,5 +3,5 @@
   <article><%= @question.body %>  <div class= "author"><%= erb :"users/_mini", locals: {user: @question.author, commentable: @question} %></div></article>
 
   <%= erb :"comments/_comment_list", locals: {comments: @question.comments} %>
-  <%= erb :"answers/_answer_list", locals: {answers: @question.answers} %>
+  <%= erb :"answers/_answer_list", locals: {answers: @question.answers, question:@question} %>
 </div>

@@ -3,10 +3,12 @@
 
 
   <form id="new-question" action="/questions" method="post">
-    Title:<br>
-    <input type="text" name="question[title]" required><br>
-    <br>
-    <textarea name="question[body]" required></textarea><br>
+    Title:
+    <input type="text" name="title" required>
+  <textarea form ="new-question" name="body"></textarea>
+  <script>
+    CKEDITOR.replace( 'body' );
+  </script>
     <button type="submit">Pour yourself a drink.</button>
   </form>
 </div>

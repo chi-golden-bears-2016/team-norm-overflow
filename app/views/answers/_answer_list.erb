@@ -4,3 +4,11 @@
   <%= erb :"answers/show", locals: {answer: answer} %>
   <% end %>
 </ul>
+<h2> Compose an answer </h2>
+<form action="/questions/<%=question.id %>/answers" method="post">
+  <textarea name="body"> </textarea>
+  <script>
+    CKEDITOR.replace( 'body' );
+  </script>
+  <input type="submit" value="Answer!">
+</form>
