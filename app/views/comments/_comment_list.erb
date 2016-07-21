@@ -1,5 +1,7 @@
+<% if comments %>
 <ul class="comments list">
   <% comments.each do |comment| %>
     <%= erb :"comments/show", locals: {comment: comment} %>
   <% end %>
 </ul>
+<% end %>
