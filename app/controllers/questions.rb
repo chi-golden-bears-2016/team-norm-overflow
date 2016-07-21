@@ -1,3 +1,4 @@
+require 'json'
 get "/questions"  do
   @questions = Question.all
   erb :"questions/index"
@@ -27,9 +28,41 @@ post "/questions" do
 end
 
 post "/questions/:id/answers" do
-  @answer= Answer.create(
-    body: params[:body],
-    author_id: session[:user_id],
-    question_id: params[:id])
-  redirect "/questions/#{params[:id]}"
+  if request.xhr?
+    @answer= Answer.create(
+      body: params[:answer_body],
+      author_id: session[:user_id],
+      question_id: params[:id])
+    erb :"answers/show", layout:false, locals:{answer:@answer}
+  else
+    @answer= Answer.create(
+      body: params[:body],
+      author_id: session[:user_id],
+      question_id: params[:id])
+    redirect "/questions/#{params[:id]}"
+  end
 end
+
+post '/questions/:id/comments/new' do
+  @question = Question.find(params[:id])
+  @comment = @question.comments.create(
+    body: params[:body],
+    author_id: session[:user_id]
+   )
+  if request.xhr?
+    content_type "json"
+    return_json = [@comment, @comment.author].to_json
+  else
+    redirect "/questions/#{params[:id]}##{@comment.id}"
+  end
+end
+
+post '/questions/:q_id/best_answers/:a_id' do
+  @question = Question.find(params[:q_id])
+  @question.best_answer_id = params[:a_id]
+  @question.save!
+  status 200
+  redirect "/questions/#{params[:q_id]}"
+end
+
+
