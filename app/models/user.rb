@@ -32,4 +32,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def question_count
+    self.questions.count
+  end
+
+  def answer_count
+    self.answers.count
+  end
+
+  def vote_count
+    self.votes.count
+  end
 end
