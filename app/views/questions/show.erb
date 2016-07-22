@@ -1,7 +1,10 @@
-<div class = "question">
+<div id="<%=@question.id%>" class = "question">
   <h1><%= @question.title %></h1>
-  <article><%= @question.body %>  <div class= "author"><%= erb :"users/_mini", locals: {user: @question.author, commentable: @question} %></div></article>
+  <h2><%= @question.points %>pts</h2>
+  <article>
+    <%= erb :"_vote_buttons", locals: {logged_in: @logged_in, voteable_id: @question.id, voteable_type: "Question"} %>
+<%= @question.body %>  <div class= "author"><%= erb :"users/_mini", locals: {user: @question.author, commentable: @question} %></div></article>
 
-  <%= erb :"comments/_comment_list", locals: {comments: @question.comments} %>
-  <%= erb :"answers/_answer_list", locals: {answers: @question.answers} %>
+  <%= erb :"comments/_comment_list", locals: {comments: @question.comments, commentable:@question, logged_in: @logged_in} %>
+  <%= erb :"answers/_answer_list", locals: {answers: @question.answers, question:@question, logged_in: @logged_in} %>
 </div>

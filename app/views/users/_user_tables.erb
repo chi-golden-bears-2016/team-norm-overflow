@@ -1,0 +1,14 @@
+
+<table class="data-table">
+  <% user_data.each do |data| %>
+  <tr>
+    <td><%= data.points%> pts</td>
+    <% if data.class.to_s == "Question" %>
+      <td><a href="/questions/<%=data.id%>"><%= data.title %></a></td>
+      <% else %>
+    <td><a href="/questions/<%=data.question.id%>#<%=data.id%>"><%= data.question.title %></a></td>
+    <% end %>
+    <td><%= data.created_at().strftime("%m/%d/%Y") %></td>
+  </tr>
+  <% end %>
+</table>
