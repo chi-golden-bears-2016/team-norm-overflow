@@ -1,4 +1,9 @@
 # Scotch Overflow 
+### Members of Team Norm Macdonald
++ Gardo
++ Joe
++ Laura
++ Zaki
 
 ###Team Norms
 1. Find reasons to celebrate!
