@@ -3,7 +3,5 @@ def is_best_answer?(answer)
 end
 
 def is_my_question?(answer)
-  logged_in? && current_user.id == answer.author_id
+  logged_in? && current_user.id == answer.question.author_id
 end
-
-

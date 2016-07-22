@@ -14,5 +14,4 @@ post "/votes/:voteable_type/:id" do
   else
     redirect back
   end
-
 end

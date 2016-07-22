@@ -10,8 +10,8 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
-
 require 'fog/aws'
+
 
 require 'pg'
 require 'active_record'

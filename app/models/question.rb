@@ -15,7 +15,7 @@ class Question < ActiveRecord::Base
   end
 
   def view_count
-    0
+    self.views || 0
   end
 
   include ActionView::Helpers::DateHelper

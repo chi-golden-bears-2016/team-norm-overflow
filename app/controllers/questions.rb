@@ -16,6 +16,7 @@ end
 get "/questions/:id" do
   @logged_in = logged_in?
   @question = Question.find(params[:id])
+  @question.increment("views").save!
   erb :"questions/show"
 end
 

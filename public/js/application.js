@@ -53,8 +53,6 @@ $(document).ready(function() {
       $(".best-answer-form").html("<img src='../../images/best_answer.png'>");
     })
   })
-
-  // button functionality below
     $(".votebuttons").on("click", function(event){
       event.preventDefault()
       var voteableType = $(this).parent().attr("name")
@@ -74,5 +72,4 @@ $(document).ready(function() {
 
         });
     });
-
 });
