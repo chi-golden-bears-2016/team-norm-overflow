@@ -5,13 +5,14 @@
       <%= erb :"_errors_helper", locals:{errors: @errors} %>
   <% end %>
 
-  <form action="/users" method="post">
+  <form action="/users" method="post" enctype="multipart/form-data">
     Username:<br>
     <input type="text" name="user[username]"><br>
     Email:<br>
     <input type="text" name="user[email]"><br>
     Password:<br>
     <input type="password" name="user[password]"><br>
+    <input type="file" accept="image/*" name="thumb">
     <button type="submit">Register!</button>
   </form>
 </div>
