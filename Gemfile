@@ -13,7 +13,6 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'rake'
 gem 'bcrypt'
-
 gem 'shotgun'
 
 group :test do

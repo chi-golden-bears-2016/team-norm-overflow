@@ -47,11 +47,12 @@ CarrierWave.configure do |config|                       # required
   config.fog_credentials = {
     provider:              'AWS',                        # required
     aws_access_key_id:     AWS_ACCESS_KEY,                        # required
-    aws_secret_access_key: AWS_SECRET_ACCESS_KEY,                        # required
-    host:                  'http://s3.amazonaws.com',             # optional, defaults to nil
-    endpoint:              'http://s3-us-east-1.amazonaws.com/'
+    aws_secret_access_key: AWS_SECRET_ACCESS_KEY, 
+    region:                'us-east-1',
+    endpoint:              'https://s3.amazonaws.com'
  # optional, defaults to nil
   }
-  config.fog_directory  = 'scotchoverflow'                          # required
+  config.fog_directory  = 'scotchoverflow' 
+  config.storage = :fog                         # required
 end
 
