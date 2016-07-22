@@ -1,5 +1,6 @@
 require 'json'
 get "/questions"  do
+  @logged_in = logged_in?
   @questions = Question.all
   erb :"questions/index"
 end
@@ -65,10 +66,9 @@ post '/questions/:q_id/best_answers/:a_id' do
   @question.save!
   if request.xhr?
     true
+    status 200
   else
     redirect "/questions/#{params[:q_id]}"
   end
 end
-
-
 

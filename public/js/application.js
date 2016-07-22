@@ -5,7 +5,6 @@ $(document).ready(function() {
     var answerBody = $(this).serialize();
     var method = $(this).attr("method");
     var id = $(this).parent().attr("id");
-    console.log(answerBody)
     $.ajax({
       url: url + "?" + answerBody,
       method: method
@@ -23,10 +22,9 @@ $(document).ready(function() {
       url: url + "?" + commentBody,
       method: method
     }).done(function(response){
-      console.log(response)
       var commentPartial= `<li class='comment' id=${response[0].id}>${response[0].body} - <a href='/users/${response[0].author_id}'>${response[1].username}</a> <span class='status'>0 minutes ago</span></li>`
       var id = response[0].commentable_id
-      var a = $("#" + id + " ul").append(commentPartial);
+      var a = $("#" + id + ".comments.list").append(commentPartial);
     })
   })
 
@@ -42,4 +40,39 @@ $(document).ready(function() {
       $(this).hide();
     })
   })
+
+  $(".answer.list").on("submit", function(event){
+    console.log();
+    event.preventDefault();
+    var url = event.originalEvent.srcElement.action;
+    var method = event.originalEvent.srcElement.method;
+    $.ajax({
+      url:url,
+      method:method
+    }).done(function(response){
+      $(".best-answer-form").html("<img src='../../images/best_answer.png'>");
+    })
+  })
+
+  // button functionality below
+    $(".votebuttons").on("click", function(event){
+      event.preventDefault()
+      var voteableType = $(this).parent().attr("name")
+      var voteableId = $(this).parent().attr("id")
+      var voteValue = $(this).attr("value")
+      var url = $(this).parent().attr("action")
+      var method = $(this).parent().attr("method")
+
+      $.ajax({
+        method: method,
+        url: url,
+        data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
+      })
+        .done(function(response){
+          $("."+response.voteable_type+"."+response.voteable_id).text(response.points)
+          console.log("done")
+
+        });
+    });
+
 });
