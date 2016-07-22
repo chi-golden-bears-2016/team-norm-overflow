@@ -3,8 +3,9 @@ class Comment < ActiveRecord::Base
   has_many :votes, as: :voteable
   belongs_to :commentable, polymorphic: true
 
+  include ActionView::Helpers::DateHelper
   def minutes_ago
-    ((Time.now-self.created_at) / 60).floor
+    distance_of_time_in_words(Time.now-self.created_at)
   end
 
   def points
