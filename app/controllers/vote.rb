@@ -21,10 +21,3 @@ post "/votes/:voteable_type/:id" do
       end
   end
 end
-
-end
-
-
-
-if !request.xhr?
-
