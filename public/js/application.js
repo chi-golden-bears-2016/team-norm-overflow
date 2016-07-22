@@ -39,4 +39,29 @@ $(document).ready(function() {
       $(".best-answer-form").html("<img src='../../images/best_answer.png'>");
     })
   })
+
+
+//button functionality below
+  $(".votebuttons").on("click", function(event){
+    event.preventDefault()
+    var voteableType = $(this).parent().attr("name")
+    var voteableId = $(this).parent().attr("id")
+    var voteValue = $(this).attr("value")
+    var url = $(this).attr("action")
+    var method = $(this).attr("method")
+    // console.log(voteValue)
+    // console.log(voteableId)
+    $.ajax({
+      method: method,
+      url: url,
+      data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
+    })
+      .done(function(response){
+
+      });
+  });
+
+
+
+
 });
