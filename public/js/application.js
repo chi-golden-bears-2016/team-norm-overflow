@@ -53,24 +53,6 @@ $(document).ready(function() {
       $(".best-answer-form").html("<img src='../../images/best_answer.png'>");
     })
   })
-
-<<<<<<< HEAD
-  $(".votebuttons").on("click", function(event){
-    event.preventDefault()
-    var voteableType = $(this).parent().attr("name")
-    var voteableId = $(this).parent().attr("id")
-    var voteValue = $(this).attr("value")
-    var url = $(this).attr("action")
-    var method = $(this).attr("method")
-    $.ajax({
-      method: method,
-      url: url,
-      data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
-    }).done(function(response){
-    });
-  });
-=======
-  // button functionality below
     $(".votebuttons").on("click", function(event){
       event.preventDefault()
       var voteableType = $(this).parent().attr("name")
@@ -90,6 +72,4 @@ $(document).ready(function() {
 
         });
     });
-
->>>>>>> 227215a13aef7ec1f6e5da9be2fbb110e7a31e55
 });

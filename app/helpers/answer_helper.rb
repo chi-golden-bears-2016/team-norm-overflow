@@ -5,5 +5,3 @@ end
 def is_my_question?(answer)
   logged_in? && current_user.id == answer.author_id
 end
-
-
