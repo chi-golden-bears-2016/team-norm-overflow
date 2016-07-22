@@ -1,6 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    actionview (4.2.0)
+      activesupport (= 4.2.0)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.1)
     activemodel (4.2.0)
       activesupport (= 4.2.0)
       builder (~> 3.1)
@@ -31,7 +37,11 @@ GEM
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
     diff-lcs (1.2.5)
+
     excon (0.51.0)
+
+    erubis (2.7.0)
+
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     faker (1.6.5)
@@ -55,6 +65,8 @@ GEM
     i18n (0.7.0)
     ipaddress (0.8.3)
     json (1.8.2)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
     mime-types (2.4.3)
     mimemagic (0.3.1)
     mini_portile (0.6.2)
@@ -68,6 +80,14 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
+    rails-dom-testing (1.0.7)
+      activesupport (>= 4.2.0.beta, < 5.0)
+      nokogiri (~> 1.6.0)
+      rails-deprecated_sanitizer (>= 1.0.1)
+    rails-html-sanitizer (1.0.3)
+      loofah (~> 2.0)
     rake (10.4.2)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
@@ -108,6 +128,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionview
   activerecord (~> 4.2.0)
   activesupport (~> 4.2.0)
   bcrypt

@@ -3,8 +3,10 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :votes, as: :voteable
   has_many :comments, as: :commentable
+  
+  include ActionView::Helpers::DateHelper
   def minutes_ago
-    ((Time.now-self.created_at) / 60).floor
+    distance_of_time_in_words(Time.now-self.created_at)
   end
 
 

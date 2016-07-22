@@ -3,7 +3,7 @@
 <% if @questions %>
   <ul class="questions list">
   <% @questions.each do |question| %>
-     <li class="question-list-item"><%= erb :"questions/_summary",locals:{ question:question }, layout:false %></li>
+     <li class="question-list-item"><%= erb :"questions/_summary",locals:{ question:question, logged_in: @logged_in }, layout:false %></li>
   <% end %>
   </ul>
 <% end %>

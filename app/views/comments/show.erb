@@ -1,1 +1,2 @@
-<li class="comment"><%= comment.body %> - <a href="/users/<%= comment.author.id %>"><%= comment.author.username %></a> <span class="status"><%= comment.minutes_ago %> minutes ago</span><%= erb :"_vote_buttons", locals: {logged_in: @logged_in, voteable_id: comment.id, voteable_type: "Comment"} %> | <b><%=comment.points%> points</b></li>
+
+<li class="comment"><%= comment.body %> - <a href="/users/<%= comment.author.id %>"><%= comment.author.username %></a> <span class="status"><%= comment.minutes_ago %> minutes ago</span><%= erb :"_vote_buttons", locals: {logged_in: @logged_in, voteable_id: comment.id, voteable_type: "Comment"} %> | <b class = "comment <%=comment.id%> points"><%=comment.points%> points</b></li>

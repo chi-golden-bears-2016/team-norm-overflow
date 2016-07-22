@@ -4,6 +4,8 @@ class Question < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :answers
 
+
+
   def points
     self.votes.sum("value")
   end
@@ -16,8 +18,9 @@ class Question < ActiveRecord::Base
     0
   end
 
+  include ActionView::Helpers::DateHelper
   def minutes_ago
-    ((Time.now-self.created_at) / 60).floor
+    distance_of_time_in_words(Time.now-self.created_at)
   end
 
   def has_best_answer?
