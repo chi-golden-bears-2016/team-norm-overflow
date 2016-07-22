@@ -26,7 +26,7 @@ $(document).ready(function() {
       console.log(response)
       var commentPartial= `<li class='comment' id=${response[0].id}>${response[0].body} - <a href='/users/${response[0].author_id}'>${response[1].username}</a> <span class='status'>0 minutes ago</span></li>`
       var id = response[0].commentable_id
-      var a = $("#" + id + " ul").append(commentPartial);
+      var a = $("#" + id + ".comments.list").append(commentPartial);
     })
   })
 });
