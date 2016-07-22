@@ -8,6 +8,7 @@
 
 }
 
+
 #main-header {
   font-family: Parkavenue,cursive;
   font-weight: bold;
@@ -124,9 +125,14 @@ button {
 }
 
 .votebuttons {
-  background: orange;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
   float: left;
   padding: 2px;
+ /* letter-spacing: .2em;
+  font-size: 1.5em;*/
+  font-family: 'Parisienne', cursive;
 }
 
 input, textarea {
@@ -216,8 +222,6 @@ a:hover{
 
 .status {
   color: gray;
-  float:right;
-
 }
 
 .statistics {
@@ -229,19 +233,20 @@ a:hover{
 .mini {
   display: inline-block;
   width: 200;
-  border: gray 1px dotted;
   padding: 8px;
-
-}
-
-.author>div.mini {
   float: right;
 }
 
-.author{
+.mini ul li {
+  list-style: none;
+  text-align: right;
+  /*display: inline-block;*/
+}
+
+/*.author{
   margin:2em;
   width: 75%;
-}
+}*/
 
 article{
   width: 75%;
@@ -252,7 +257,10 @@ article{
   margin-bottom: 4em;
 }
 
+article .mini {
+  margin: 0px;
+}
+
 .answer{
   background-color: rgba(50,50,50,.1);
 }
-
