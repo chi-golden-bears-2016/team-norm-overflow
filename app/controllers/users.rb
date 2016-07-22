@@ -12,6 +12,8 @@ end
 
 post "/users" do
   @user = User.create(params[:user])
+  @user.avatar = params[:thumb]
+  @user.save!
   if @user.errors.any?
     @errors << @user.errors.full_messages
     erb :'/users/new'

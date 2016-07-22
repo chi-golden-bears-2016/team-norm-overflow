@@ -10,12 +10,21 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
+<<<<<<< HEAD
+=======
+require 'fog/aws'
+>>>>>>> bb0a54a511e8108e9e1f9e33cfd5db73be618dca
 require 'pg'
 require 'active_record'
 require 'logger'
 require 'bcrypt'
 require 'faker'
+<<<<<<< HEAD
 require 'action_view'
+=======
+
+
+>>>>>>> bb0a54a511e8108e9e1f9e33cfd5db73be618dca
 require 'sinatra'
 require "sinatra/reloader" if development?
 
@@ -41,6 +50,8 @@ end
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
+require 'carrierwave'
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+

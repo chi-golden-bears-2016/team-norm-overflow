@@ -1,3 +1,4 @@
 .DS_store
 *.db
 aws_secrets.rb
+public/uploads/*
