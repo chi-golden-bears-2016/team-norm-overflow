@@ -56,7 +56,7 @@ $(document).ready(function() {
         data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
       })
         .done(function(response){
-          $("."+response.voteable_type+"."+response.voteable_id).text(response.points + " points")
+          $("."+response.voteable_type+"."+response.voteable_id).text(response.points)
           console.log("done")
 
         });
