@@ -5,7 +5,6 @@ $(document).ready(function() {
     var answerBody = $(this).serialize();
     var method = $(this).attr("method");
     var id = $(this).parent().attr("id");
-    console.log(answerBody)
     $.ajax({
       url: url + "?" + answerBody,
       method: method
@@ -23,10 +22,21 @@ $(document).ready(function() {
       url: url + "?" + commentBody,
       method: method
     }).done(function(response){
-      console.log(response)
       var commentPartial= `<li class='comment' id=${response[0].id}>${response[0].body} - <a href='/users/${response[0].author_id}'>${response[1].username}</a> <span class='status'>0 minutes ago</span></li>`
       var id = response[0].commentable_id
       var a = $("#" + id + ".comments.list").append(commentPartial);
+    })
+  })
+  $(".answer.list").on("submit", function(event){
+    console.log();
+    event.preventDefault();
+    var url = event.originalEvent.srcElement.action;
+    var method = event.originalEvent.srcElement.method;
+    $.ajax({
+      url:url,
+      method:method
+    }).done(function(response){
+      $(".best-answer-form").html("<img src='../../images/best_answer.png'>");
     })
   })
 });

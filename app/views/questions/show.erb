@@ -8,5 +8,3 @@
   <%= erb :"comments/_comment_list", locals: {comments: @question.comments, commentable:@question, logged_in: @logged_in} %>
   <%= erb :"answers/_answer_list", locals: {answers: @question.answers, question:@question, logged_in: @logged_in} %>
 </div>
-
-
