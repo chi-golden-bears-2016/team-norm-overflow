@@ -2,7 +2,7 @@
 
   <div class="votes">
     <div class="mini-counts"><span title="votes"><%= question.votes.sum("value") %></span></div>
-    <div>votes</div>
+    <div>points</div>
     <%= erb :"_vote_buttons", locals: {logged_in: @logged_in, voteable_id: question.id, voteable_type: "Question"}%>
   </div>
   <div class="answers">
@@ -11,7 +11,7 @@
   </div>
   <div class="views">
     <div class="mini-counts"><span title="views"></span><%= question.view_count %></div>
-    <div>view</div>
+    <div>views</div>
   </div>
   <div class="title">
     <h2 class="title-text"><a href="questions/<%= question.id %>"><%= question.title %></a></h2>
