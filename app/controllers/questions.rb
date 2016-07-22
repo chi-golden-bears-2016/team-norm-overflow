@@ -1,5 +1,6 @@
 require 'json'
 get "/questions"  do
+  @logged_in = logged_in?
   @questions = Question.all
   erb :"questions/index"
 end
@@ -67,5 +68,3 @@ post '/questions/:q_id/best_answers/:a_id' do
     redirect "/questions/#{params[:q_id]}"
   end
 end
-
-

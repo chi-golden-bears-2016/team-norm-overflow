@@ -27,6 +27,7 @@ $(document).ready(function() {
       var a = $("#" + id + ".comments.list").append(commentPartial);
     })
   })
+
   $(".answer.list").on("submit", function(event){
     console.log();
     event.preventDefault();
@@ -39,4 +40,26 @@ $(document).ready(function() {
       $(".best-answer-form").html("<img src='../../images/best_answer.png'>");
     })
   })
+
+  // button functionality below
+    $(".votebuttons").on("click", function(event){
+      event.preventDefault()
+      var voteableType = $(this).parent().attr("name")
+      var voteableId = $(this).parent().attr("id")
+      var voteValue = $(this).attr("value")
+      var url = $(this).parent().attr("action")
+      var method = $(this).parent().attr("method")
+
+      $.ajax({
+        method: method,
+        url: url,
+        data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
+      })
+        .done(function(response){
+          $("."+response.voteable_type+"."+response.voteable_id).text(response.points)
+          console.log("done")
+
+        });
+    });
+
 });

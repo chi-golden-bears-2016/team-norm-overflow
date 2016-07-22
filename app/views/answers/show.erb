@@ -6,9 +6,6 @@
   <% end %>
   <%= answer.body %> -
   <%= erb :"/users/_mini", locals: {user: answer.author, commentable: answer} %>
-  <%= erb :"_vote_buttons", locals: {logged_in: @logged_in, voteable_id: answer.id, voteable_type: "Answer"}%> | <b><%=answer.points%> points</b>
+  <%= erb :"_vote_buttons", locals: {logged_in: @logged_in, voteable_id: answer.id, voteable_type: "Answer"}%> | <b class = "answer <%=answer.id%> points"><%=answer.points%> points</b>
   <%= erb :"comments/_comment_list", locals: {comments: answer.comments, commentable:answer} %>
 </li>
-
-
-
