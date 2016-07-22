@@ -1,9 +1,10 @@
+require 'json'
 post "/votes/:voteable_type/:id" do
+
   if Vote.votes_exist?(session[:user_id], params[:voteable_type], params[:id])
     "not authorized"
   else
     vote = Vote.create(value: params[:vote], voter_id: session[:user_id], voteable_type:params[:voteable_type], voteable_id: params[:id])
-    # redirect "/questions/?#{params[:return_URL]}"
   end
 
   if params[:voteable_type] == "Question"
@@ -20,3 +21,10 @@ post "/votes/:voteable_type/:id" do
       end
   end
 end
+
+end
+
+
+
+if !request.xhr?
+
