@@ -43,11 +43,13 @@ $(document).ready(function() {
     // console.log(voteableId)
     $.ajax({
       method: method,
-      url: url,
-      data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
+      url: url
+      // data: {number: 5}
+      // data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
     })
       .done(function(response){
-
+        console.log("this works")
+        console.log(response)
       });
   });
 
