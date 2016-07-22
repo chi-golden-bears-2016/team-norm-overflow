@@ -9,10 +9,10 @@ gem 'sinatra-contrib'
 
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
-gem 'actionview'
 
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'actionview'
 gem 'rake'
 gem 'bcrypt'
 gem 'shotgun'

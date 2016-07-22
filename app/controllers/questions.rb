@@ -45,6 +45,8 @@ post "/questions/:id/answers" do
   end
 end
 
+
+
 post '/questions/:id/comments/new' do
   @question = Question.find(params[:id])
   @comment = @question.comments.create(
@@ -64,10 +66,10 @@ post '/questions/:q_id/best_answers/:a_id' do
   @question.best_answer_id = params[:a_id]
   @question.save!
   if request.xhr?
+    true
     status 200
   else
     redirect "/questions/#{params[:q_id]}"
   end
 end
-
 

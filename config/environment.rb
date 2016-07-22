@@ -10,14 +10,26 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
+<<<<<<< HEAD
 require 'fog/aws'
+=======
+
+require 'fog/aws'
+
+>>>>>>> 227215a13aef7ec1f6e5da9be2fbb110e7a31e55
 require 'pg'
 require 'active_record'
 require 'logger'
 require 'bcrypt'
 require 'faker'
+<<<<<<< HEAD
 require 'action_view'
 
+=======
+
+require 'action_view'
+
+>>>>>>> 227215a13aef7ec1f6e5da9be2fbb110e7a31e55
 require 'sinatra'
 require "sinatra/reloader" if development?
 

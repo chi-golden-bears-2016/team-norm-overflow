@@ -27,6 +27,20 @@ $(document).ready(function() {
       var a = $("#" + id + ".comments.list").append(commentPartial);
     })
   })
+
+  $(".best-answer-form").on("submit", function(event){
+    event.preventDefault();
+    var url =$(this).attr("action");
+    var commentBody = $(this).serialize();
+    var method = $(this).attr("method");
+    $.ajax({
+      url: url,
+      method: method
+    }).done(function(response){
+      $(this).hide();
+    })
+  })
+
   $(".answer.list").on("submit", function(event){
     console.log();
     event.preventDefault();
@@ -40,6 +54,7 @@ $(document).ready(function() {
     })
   })
 
+<<<<<<< HEAD
   $(".votebuttons").on("click", function(event){
     event.preventDefault()
     var voteableType = $(this).parent().attr("name")
@@ -54,4 +69,27 @@ $(document).ready(function() {
     }).done(function(response){
     });
   });
+=======
+  // button functionality below
+    $(".votebuttons").on("click", function(event){
+      event.preventDefault()
+      var voteableType = $(this).parent().attr("name")
+      var voteableId = $(this).parent().attr("id")
+      var voteValue = $(this).attr("value")
+      var url = $(this).parent().attr("action")
+      var method = $(this).parent().attr("method")
+
+      $.ajax({
+        method: method,
+        url: url,
+        data: {voteable_type: voteableType, voteable_id: voteableId, vote: voteValue}
+      })
+        .done(function(response){
+          $("."+response.voteable_type+"."+response.voteable_id).text(response.points)
+          console.log("done")
+
+        });
+    });
+
+>>>>>>> 227215a13aef7ec1f6e5da9be2fbb110e7a31e55
 });

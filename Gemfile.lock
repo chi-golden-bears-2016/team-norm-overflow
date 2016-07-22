@@ -37,8 +37,16 @@ GEM
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
     diff-lcs (1.2.5)
+<<<<<<< HEAD
     erubis (2.7.0)
     excon (0.51.0)
+=======
+
+    excon (0.51.0)
+
+    erubis (2.7.0)
+
+>>>>>>> 227215a13aef7ec1f6e5da9be2fbb110e7a31e55
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     faker (1.6.5)
